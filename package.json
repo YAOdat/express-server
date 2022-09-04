@@ -12,6 +12,7 @@
     "supertest": "^6.2.4"
   },
   "scripts": {
+    "test": "jest --coverage --verbose",
     "start": "node server.js"
   },
   "name": "express-server",

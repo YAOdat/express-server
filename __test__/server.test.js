@@ -5,4 +5,12 @@ const server = require('../server');
 const request = supertest(server.app);
 
 
-describe()
+describe('Express Server', () => {
+    it('Home Page works', async () => {
+        const res = await request.get('/');
+        expect(res.text).toEqual('Hello World')
+    })
+
+})
+
+// test
