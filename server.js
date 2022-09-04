@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express ();
 const bodyPraser = require('body-parser');
+const people = []
+
+
 app.get('/', (req, res) => {
     res.send('Hello World');
   })
@@ -10,11 +13,12 @@ app.use(bodyPraser.urlencoded({extended:false}))
   
 app.post('/person', (req, res) => {
    let newPerson = {
-    name: req.query.name,
-    age: req.query.age,
-    gender: req.query.gender
+    name: req.body.name,
+    age: req.body.age+5,
+    gender: req.body.gender
    }
-    res.json(newPerson.age+5)
+    people.push(newPerson)
+    res.json(people)
   })
 
   function start(port) {
