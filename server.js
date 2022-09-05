@@ -3,9 +3,10 @@ const app = express ();
 const bodyPraser = require('body-parser');
 const people = []
 
-
 app.get('/', (req, res) => {
     res.send('Hello World');
+    res.status(200);
+
   })
 
 app.use(bodyPraser.json());
@@ -17,8 +18,10 @@ app.post('/person', (req, res) => {
     age: req.body.age+5,
     gender: req.body.gender
    }
+   
     people.push(newPerson)
-    res.json(people)
+    res.send(newPerson)
+    res.status(200)
   })
 
   function start(port) {
