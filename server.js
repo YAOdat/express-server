@@ -28,8 +28,8 @@ app.post('/person', (req, res) => {
     res.status(200)
   })
 
-  function start(port) {
-    app.listen(4000, () => console.log(`The server is up`));
+  function start() {
+    app.listen(process.env.PORT, () => console.log(`The server is up`, process.env.PORT));
   }
 
   module.exports = {
