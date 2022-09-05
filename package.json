@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest --coverage --verbose",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "name": "express-server",
   "description": "",
